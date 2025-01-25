@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h1 class="mb-0">Cálculo de compras</h1>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Ingresa tu nombre</label>
+                                <input type="text" id="nombre" name="nombre" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="edad" class="form-label">Ingresa tu edad</label>
+                                <input type="number" id="edad" name="edad" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="tarros" class="form-label">Ingresa la cantidad de tarros de pintura a comprar</label>
+                                <input type="number" id="tarros" name="tarros" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Calcular</button>
+                        </form>
+                    </div>
+                </div>
+                {% if total is not none %}
+                <div class="card mt-4 shadow">
+                    <div class="card-body">
+                        <h2>Resultado</h2>
+                        <p><strong>Nombre del cliente:</strong> {{ nombre }}</p>
+                        <p><strong>Total sin descuento:</strong> ${{ total_sin_descuento }}</p>
+                        <p><strong>El descuento es:</strong> ${{ descuento }}</p>
+                        <p><strong>El total a pagar es de:</strong> ${{ total_con_descuento }}</p>
+                        <a href="/" class="btn btn-secondary w-100 mt-3">Volver al inicio</a>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
